@@ -1,0 +1,27 @@
+<SCRIPT LANGUAGE = VBScript RUNAT=Server>
+
+SUB Application_OnStart
+   Set FileObject = Server.CreateObject("Scripting.FileSystemObject")
+   TestFile = Server.MapPath ("/Chat/Chat.txt")
+   Set OutStream = FileObject.CreateTextFile (TestFile, True)
+   OutStream.WriteBlankLines(1)
+
+   TestFile = Server.MapPath ("/Chat/Nicks.txt")
+   Set OutStream = FileObject.CreateTextFile (TestFile, True)
+   OutStream.WriteBlankLines(1)
+
+   Set OutStream = Nothing
+   Set FileObject = Nothing
+END SUB
+
+SUB Application_OnEnd
+END SUB
+
+SUB Session_OnStart
+ Session.TimeOut = 1
+END SUB
+
+SUB Session_OnEnd
+END SUB
+
+</SCRIPT>

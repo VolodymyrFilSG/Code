@@ -1,0 +1,1 @@
+for i in map(lambda x: x, range(1, int(input()) + 1)): print(i, end="")
